@@ -1,6 +1,12 @@
+from telnetlib import DO
 from turtle import Turtle
+
 STARTING_POSITION = [(0, 0), (-20, 0), (-40, 0)]
 MOVE_DISTANCE = 20
+UP = 90
+DOWN = 270
+LEFT = 180
+RIGHT = 0
 
 class Snake:
 
@@ -25,13 +31,17 @@ class Snake:
         self.head.fd(MOVE_DISTANCE)
 
     def Up(self):
-        self.head.setheading(90)
+        if self.head.heading() != DOWN:
+            self.head.setheading(UP)
 
     def Down(self):
-        self.head.setheading(270)
+        if self.head.heading() != UP:
+            self.head.setheading(DOWN)
 
     def Left(self):
-        self.head.setheading(180)
+        if self.head.heading() != RIGHT:
+            self.head.setheading(LEFT)
 
     def Right(self):
-        self.head.setheading(0)
+        if self.head.heading() != LEFT:
+            self.head.setheading(RIGHT)
