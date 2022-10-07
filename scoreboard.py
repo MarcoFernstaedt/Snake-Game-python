@@ -1,4 +1,3 @@
-from ctypes import alignment
 from turtle import Turtle
 
 ALIGNMENT = "center"
